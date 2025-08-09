@@ -17,7 +17,7 @@ let load = document.querySelector('.load');
 // load.classList.add('hidden')
 hide.classList.remove('hidden')
 
-function searchhome(){
+async function searchhome(){
     let inputhome = document.querySelector('#inputhome');
     let query = api + inputhome.value;
     fetch(query).then(data => data.json()).then(data=>{

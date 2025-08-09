@@ -26,8 +26,9 @@ pay.addEventListener('click', ()=>{
     pay.classList.add('hidden');
     success.classList.remove('hidden');
     setTimeout(()=>{
-        start.classList.remove('hidden');    
-        success.classList.add('hidden')
+        // start.classList.remove('hidden');    
+        // success.classList.add('hidden')
+        window.location.href = '/';
     }, 3000)
 })
 
