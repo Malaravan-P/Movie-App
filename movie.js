@@ -17,16 +17,12 @@ let load = document.querySelector('.load');
 load.classList.add('hidden')
 hide.classList.remove('hidden')
 
-async function searchhome() {
-    try {
-        let inputhome = document.querySelector('#inputhome');
-        let query = api + inputhome.value;
-
+function searchhome(){
+    let inputhome = document.querySelector('#inputhome');
+    let query = api + inputhome.value;
+    fetch(query).then(data => data.json()).then(data=>{
         hide.classList.add('hidden');
-        load.classList.remove('hidden');
-
-        const response = await fetch(query);
-        const data = await response.json();
+        load.classList.remove('hidden')
 
         title.innerText = data.Title;
         description.innerText = data.Plot;
@@ -40,11 +36,8 @@ async function searchhome() {
         writers.innerText = data.Writer;
         language.innerText = data.Language;
         country.innerText = data.Country;
-    } catch (error) {
-        console.error("Error fetching movie:", error);
-    }
+    })
 }
-
 
 function back(){
     hide.classList.remove('hidden')
