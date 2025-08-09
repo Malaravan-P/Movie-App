@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body class="home m-2 bg-[#fffcf4c1]">
+    <!-- Tailwind spinner (uses built-in animate-spin) -->
+    <div id="loading" class="hidden">
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
+            <div class="flex flex-col items-center gap-3">
+              <!-- spinner -->
+              <div class="w-12 h-12 rounded-full border-4 border-gray-200 border-t-orange-400 animate-spin"></div>
+              <!-- optional text -->
+              <span class="text-sm text-white">Loading...</span>
+            </div>
+          </div>
+     </div>
     <!-- Nav -->
     <div class="flex justify-between mt-6 mx-4 items-center">
         <div class="flex gap-2">
@@ -107,7 +118,7 @@
                         <h1 class="text-2xl font-medium text-orange-400">Cast</h1>
                         <h1 id="actorName" class="text-xl text-neutral-700 mt-2 ml-2">Actors Name</h1>
                         <!-- <div class="flex gap-5 mt-4 px-2">
-                            <!-- <div class="text-center border-1 rounded-xl" >
+                            <div class="text-center border-1 rounded-xl" >
                                 <img src="Avengers.jpg" class="w-[150px] h-[150px] object-center rounded-t-xl">
                                 <h2 id="actorName" class="text-[18px] font-medium m-2 ">Name</h2>
                             </div>

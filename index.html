@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body id="homepage" class="home m-2 bg-[#fffcf4c1]">
+    <!-- Tailwind spinner (uses built-in animate-spin) -->
+     <div id="loading" class="hidden">
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
+            <div class="flex flex-col items-center gap-3">
+              <!-- spinner -->
+              <div class="w-12 h-12 rounded-full border-4 border-gray-200 border-t-orange-400 animate-spin"></div>
+              <!-- optional text -->
+              <span class="text-sm text-white">Loading...</span>
+            </div>
+          </div>
+     </div>
+  
     <!-- Nav -->
     <div class="flex justify-between mt-6 mx-4 items-center">
         <div class="flex gap-2">
@@ -41,55 +53,55 @@
     </div>
 
     
-    <div class="load ">
+    <div class="load hidden ">
         <div class="relative my-auto mt-8 flex justify-evenly">
-            <img id="poster" src="images/Avengers.jpg" class="h-[550px] w-[420px] object-fill rounded-2xl">
+            <img id="poster" src="" class="h-[550px] w-[420px] object-fill rounded-2xl">
             <!-- <h1 class="absolute top-5 left-5 text-orange-400 text-lg px-5 py-2  rounded-full bg-[#ffffff4e] "> Avengers: End Game </h1> -->
              <div class=" ml-[-30px] " >
                 <div class="flex items-center mt-10">
                     <h1 class="text-3xl font-medium text-orange-400">Title : </h1>
-                    <h2 id="title" class="text-2xl mx-3 mt-1 font-medium text-neutral-500 "> Movie Name</h2>
+                    <h2 id="title" class="text-2xl mx-3 mt-1 font-medium text-neutral-500 "></h2>
                 </div>
                 <div class="mt-2">
                     <!-- Description -->
                     <div class="w-[100vh]">
                         <h1 class="text-xl font-medium text-orange-400 ">Description</h1>
-                        <p id="plot" class="text-lg text-neutral-700 mt-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, debitis? Praesentium optio eum similique, numquam iste porro quis voluptatum asperiores.</p>
+                        <p id="plot" class="text-lg text-neutral-700 mt-1"></p>
                         <div class="flex gap-5 mt-4">
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Director</h2>
-                                <p id="director" class="text-lg mt-1">Time</p>
+                                <p id="director" class="text-lg mt-1"></p>
                             </div>
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Duration</h2>
-                                <p id="runtime" class="text-lg mt-1">Time</p>
+                                <p id="runtime" class="text-lg mt-1"></p>
                             </div>
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Release Date</h2>
-                                <p id="released" class="text-lg mt-1">Time</p>
+                                <p id="released" class="text-lg mt-1"></p>
                             </div>
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Genre</h2>
-                                <p id="genre" class="text-lg mt-1">Time</p>
+                                <p id="genre" class="text-lg mt-1"></p>
                             </div>
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Rating</h2>
-                                <p id="rating" class="text-lg mt-1">Time</p>
+                                <p id="rating" class="text-lg mt-1"></p>
                             </div>
                         </div>
     
                         <div class="flex gap-5 mt-6">
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Language</h2>
-                                <p id="language" class="text-lg mt-1">Time</p>
+                                <p id="language" class="text-lg mt-1"></p>
                             </div>
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Country</h2>
-                                <p id="country" class="text-lg mt-1">Time</p>
+                                <p id="country" class="text-lg mt-1"></p>
                             </div>
                             <div class="">
                                 <h2 class="text-xl text-orange-400 w-fit border-b-1">Writers</h2>
-                                <p id="writers" class="text-lg mt-1">Time</p>
+                                <p id="writers" class="text-lg mt-1"></p>
                             </div>
                         </div>
                     </div>
@@ -97,7 +109,7 @@
                     <!-- Cast -->
                     <div class=" mt-4 ">
                         <h1 class="text-2xl font-medium text-orange-400">Cast</h1>
-                        <h1 id="actorName" class="text-xl text-neutral-700 mt-2 ml-2">Actors Name</h1>
+                        <h1 id="actorName" class="text-xl text-neutral-700 mt-2 ml-2"></h1>
                     </div>
                     <div class="" >
                         <button onclick="back()" class="text-md hover:bg-orange-400 inline-block hover:text-white mt-22 ml-[650px] border w-fit py-2 border-orange-400  px-8 rounded-full text-orange-400">Back</button>
@@ -132,19 +144,19 @@
             </div>
             <!-- movie images -->
             <div class="flex x-6 mt-5 justify-evenly">
-                <div id="gf" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="gf" data-movie="The Godfather" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Godfather.jpg" class="w-[225px] h-[275px] object-center  rounded-3xl">
                 </div>
-                <div id="sr" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="sr" data-movie="The shawshank redemption" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Shawshank Redemption 2.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="sl" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="sl" data-movie="Schindler's List" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/schindler's list.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="tdk" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="tdk" data-movie="The Dark Knight" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/The Dark Knight (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="fc" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="fc" data-movie="Fight Club" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/F**** C***.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>
@@ -164,19 +176,19 @@
             </div>
             <!-- movie images -->
             <div class="flex x-6 mt-5 justify-evenly">
-                <div id="as" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="as" data-movie="Anbe Sivam" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Anbe Sivam.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="nayakan" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="nayakan" data-movie="Nayakan" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Nayakan.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="nine" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="nine" data-movie="'96" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/96.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="sp" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="sp" data-movie="Soorarai Pottru" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Soorarai Pottru.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="thalapathi" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="thalapathi" data-movie="Thalapathi" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Thalapathi.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>
@@ -196,19 +208,19 @@
             </div>
             <!-- movie images -->
             <div class="flex x-6 mt-5 justify-evenly">
-                <div id="aiw" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="aiw" data-movie="Avengers Infinity War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Avengers Infinity War .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="cacw" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="cacw" data-movie="Captain America Civil War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Captain America_ Civil War.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="guardians" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="guardians" data-movie="Guardians of the galaxy" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Guardians.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="ironman" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="ironman" data-movie="Iron Man" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Iron Man (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="snwh" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="snwh" data-movie="spider man no way home" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Spiderman NWH.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>
@@ -229,19 +241,19 @@
             </div>
             <!-- movie images -->
             <div class="flex x-6 mt-5 justify-evenly">
-                <div id="bighero" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="bighero" data-movie="Big Hero 6" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Big Hero 6.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="toystory" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="toystory" data-movie="Toy Story" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Toy story.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="monster" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                <div id="monster" data-movie="Monsters, Inc." class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Monster inc.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="lionking" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                <div id="lionking" data-movie="The Lion King" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
                     <img src="images/Lion King.jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
-                <div id="up" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                <div id="up" data-movie="Up" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
                     <img src="images/UP .jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>

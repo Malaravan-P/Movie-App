@@ -14,14 +14,31 @@ let country = document.querySelector('#country')
 let writers = document.querySelector('#writers')
 let main = document.querySelector('.main');
 let sub = document.querySelector('.sub');
-// main.classList.add('hidden')
+main.classList.add('hidden')
 
-function search(){
+const loadingEl = document.getElementById('loading');
+
+function showLoading() {
+  loadingEl.classList.remove('hidden');
+}
+function hideLoading() {
+  loadingEl.classList.add('hidden');
+}
+async function search(){
     let input = document.querySelector('#input');
     let query = api + input.value;
-    fetch(query).then(data => data.json()).then(data=>{
+    try {
+        showLoading();
+        let res = await fetch(query);
+        let data = await res.json();
+        
+        if (data.Response === "False") {
+            alert("Movie not found!");
+            return;
+        }
+
         main.classList.remove('hidden');
-        sub.classList.add('hidden')
+        sub.classList.add('hidden');
 
         title.innerText = data.Title;
         description.innerText = data.Plot;
@@ -35,5 +52,10 @@ function search(){
         writers.innerText = data.Writer;
         language.innerText = data.Language;
         country.innerText = data.Country;
-    })
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        alert("Something went wrong.");
+    }finally {
+        hideLoading();
+    }
 }
