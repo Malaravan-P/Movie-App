@@ -16,7 +16,7 @@ let main = document.querySelector('.main');
 let sub = document.querySelector('.sub');
 // main.classList.add('hidden')
 
-async function search(){
+function search(){
     let input = document.querySelector('#input');
     let query = api + input.value;
     fetch(query).then(data => data.json()).then(data=>{
