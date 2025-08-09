@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body id="homepage" class="home m-2 bg-[#fffcf4c1]">
+    <!-- Nav -->
+    <div class="flex justify-between mt-6 mx-4 items-center">
+        <div class="flex gap-2">
+            <img src="images/Logo1.jpg" class="rounded-full w-14 h-14">
+            <div class="items-start mt-2">
+                <h1 class="text-[18px] font-semibold my-auto text-orange-400">Cinema</h1>
+                <h1 class="text-[14px] mx-3  mt-[-8px] font-semibold my-auto text-orange-400">Company</h1>
+            </div>
+            
+        </div>
+        <div class="flex text-center focus:border-orange-500">
+            <input id="inputhome" type="search" placeholder="Search the movies..." class="focus:outline-none focus:text-orange-500  border-orange-400 text-orange-200 border-1 w-[400px] px-8 py-3 border-r-0 rounded-l-full">
+            <button onclick="searchhome()" class=" hover:cursor-pointer mr-[-150px] border-orange-400 border-1 rounded-r-full w-fit px-5 py-3"><i class="text-orange-400  bi bi-search"></i></button>
+        </div>
+
+        <!-- Side Options -->
+
+        <div class="mr-[-200px] flex gap-4 hover:cursor-pointer text-lg text-neutral-500">
+            <a href="index.html"><h2 class="hover:text-orange-400 ">Home</h2></a>
+            <a href="movie.html"><h2 class="hover:text-orange-400">Search<h2></h2></a>
+            <div class="flex mx-2 gap-2">
+                <a href="login.html"><h2 class="hover:text-orange-400">Login</h2></a>
+                <h2>|</h2>
+                <a href="signup.html"><h2 class="hover:text-orange-400">Sign In</h2></a>
+            </div>
+        </div>
+        <div>
+            <img src="images/profile.jpg" class="rounded-full w-14 h-14">
+        </div>
+    </div>
+
+
+    <div class="load hidden">
+        <div class="relative my-auto mt-8 flex justify-evenly">
+            <img id="poster" src="images/Avengers.jpg" class="h-[550px] w-[420px] object-fill rounded-2xl">
+            <!-- <h1 class="absolute top-5 left-5 text-orange-400 text-lg px-5 py-2  rounded-full bg-[#ffffff4e] "> Avengers: End Game </h1> -->
+             <div class=" ml-[-30px] " >
+                <div class="flex items-center mt-10">
+                    <h1 class="text-3xl font-medium text-orange-400">Title : </h1>
+                    <h2 id="title" class="text-2xl mx-3 mt-1 font-medium text-neutral-500 "> Movie Name</h2>
+                </div>
+                <div class="mt-2">
+                    <!-- Description -->
+                    <div class="w-[100vh]">
+                        <h1 class="text-xl font-medium text-orange-400 ">Description</h1>
+                        <p id="plot" class="text-lg text-neutral-700 mt-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, debitis? Praesentium optio eum similique, numquam iste porro quis voluptatum asperiores.</p>
+                        <div class="flex gap-5 mt-4">
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Director</h2>
+                                <p id="director" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Duration</h2>
+                                <p id="runtime" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Release Date</h2>
+                                <p id="released" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Genre</h2>
+                                <p id="genre" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Rating</h2>
+                                <p id="rating" class="text-lg mt-1">Time</p>
+                            </div>
+                        </div>
+    
+                        <div class="flex gap-5 mt-6">
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Language</h2>
+                                <p id="language" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Country</h2>
+                                <p id="country" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Writers</h2>
+                                <p id="writers" class="text-lg mt-1">Time</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Cast -->
+                    <div class=" mt-4 ">
+                        <h1 class="text-2xl font-medium text-orange-400">Cast</h1>
+                        <h1 id="actorName" class="text-xl text-neutral-700 mt-2 ml-2">Actors Name</h1>
+                    </div>
+                    <div class="" >
+                        <button onclick="back()" class="text-md hover:bg-orange-400 inline-block hover:text-white mt-22 ml-[650px] border w-fit py-2 border-orange-400  px-8 rounded-full text-orange-400">Back</button>
+                     </div> 
+                </div>    
+             </div>
+             
+        </div> 
+    </div>           
+
+
+
+
+
+    <!-- Home Page -->
+    <div class="hide">
+                <!-- Display Photo -->
+        <div class="my-auto mx-3 mt-4">
+            <img src="images/cinema.jpg" class="h-[400px] w-fit object-cover rounded-2xl">
+        </div>
+
+        <!-- Top-Rated Movies -->
+        <div class="mt-10 mx-6">
+            <div class="flex justify-between ">
+                <h1 class="text-2xl text-orange-400 font-semibold">Top-Rated Movies</h1>
+                <a href="movie.html">
+                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                        <h2>View All</h2>
+                        <i class=" bi bi-arrow-right-circle"></i>
+                    </div>
+                </a>
+            </div>
+            <!-- movie images -->
+            <div class="flex x-6 mt-5 justify-evenly">
+                <div id="gf" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Godfather.jpg" class="w-[225px] h-[275px] object-center  rounded-3xl">
+                </div>
+                <div id="sr" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Shawshank Redemption 2.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="sl" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/schindler's list.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="tdk" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/The Dark Knight (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="fc" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/F**** C***.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tamil Movies -->
+        <div class="mt-10 mx-6">
+            <div class="flex justify-between ">
+                <h1 class="text-2xl text-orange-400 font-semibold">Tamil Movies</h1>
+                <a href="movie.html">
+                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                        <h2>View All</h2>
+                        <i class=" bi bi-arrow-right-circle"></i>
+                    </div>
+                </a>
+            </div>
+            <!-- movie images -->
+            <div class="flex x-6 mt-5 justify-evenly">
+                <div id="as" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Anbe Sivam.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="nayakan" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Nayakan.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="nine" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/96.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="sp" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Soorarai Pottru.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="thalapathi" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Thalapathi.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Marvel Movies -->
+        <div class="mt-10 mx-6">
+            <div class="flex justify-between ">
+                <h1 class="text-2xl text-orange-400 font-semibold">Marvel Movies</h1>
+                <a href="movie.html">
+                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                        <h2>View All</h2>
+                        <i class=" bi bi-arrow-right-circle"></i>
+                    </div>
+                </a>
+            </div>
+            <!-- movie images -->
+            <div class="flex x-6 mt-5 justify-evenly">
+                <div id="aiw" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Avengers Infinity War .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="cacw" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Captain America_ Civil War.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="guardians" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Guardians.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="ironman" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Iron Man (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="snwh" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Spiderman NWH.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Disney Movies -->
+        <div class="mt-10 mx-6">
+            <div class="flex justify-between ">
+                <h1 class="text-2xl text-orange-400 font-semibold">Disney Movies</h1>
+                <a href="movie.html">
+                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                        <h2>View All</h2>
+                        <i class=" bi bi-arrow-right-circle"></i>
+                    </div>
+                </a>
+            </div>
+            <!-- movie images -->
+            <div class="flex x-6 mt-5 justify-evenly">
+                <div id="bighero" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Big Hero 6.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="toystory" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Toy story.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="monster" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                    <img src="images/Monster inc.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="lionking" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                    <img src="images/Lion King.jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+                <div id="up" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                    <img src="images/UP .jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                </div>
+            </div>
+        </div>
+
+
+
+
+            <!-- Footer -->
+        <div class="flex justify-evenly items-center mt-15 h-[175px] m-[-10px] bg-black">
+            <div class="" >
+                <p class="text-center font-medium text-lg text-orange-400" >Connect With Us</p>
+                <div class=" text-neutral-400 flex gap-8 mt-2 text-2xl">
+                    <i class="bi bi-instagram text-neutral-400 hover:text-orange-400 transition-all"></i>
+                    <i class="bi bi-youtube text-neutral-400 hover:text-orange-400 transition-all"></i>
+                    <i class="bi bi-facebook text-neutral-400 hover:text-orange-400 transition-all"></i>
+                </div>
+            </div>
+            <div class="">
+                <p class="text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Help Centre</p>
+                <p class="mt-1 text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Cookie Preferences</p>
+                <p class="mt-1 text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Legal Notices</p>
+                <p class="mt-1 text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Media Centre</p>
+            </div>
+            <div>
+                <p class="text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Terms of Use</p>
+                <p class="mt-1 text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Contact Us</p>
+                <p class="mt-1 text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Privacy</p>
+                <p class="mt-1 text-neutral-400 text-md hover:text-orange-400 hover:underline transition-all">Investor Relations</p>
+            </div>
+            <div>
+                <p class=" text-neutral-400" ><span class="text-orange-400 font-medium text-md">E-Mail:</span> <span class="underline hover:cursor-pointer">cinemacompany@gmail.com</span></p>
+                <p class="mt-1 text-neutral-400"><span class="text-orange-400 font-medium text-md">Contact:</span> <span class="underline hover:cursor-pointer" >+91 9876543210</span></p>
+            </div>
+        </div>
+
+        <div class=" h-[50px] text-neutral-400 text-center pt-4 px-6 pb-8 m-[-10px] bg-black">
+            <h1>@Copy Right All Reserved</h1>
+        </div>
+    </div>
+    
+
+    <script src="movie.js"></script>
+</body>
+</html>

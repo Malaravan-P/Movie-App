@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="m-2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="m-2">
+    <!-- Nav -->
+    <div class="flex justify-between mt-6 mx-4 items-center">
+        <div class="flex gap-2">
+            <img src="images/Logo1.jpg" class="rounded-full w-14 h-14">
+            <div class="items-start mt-2">
+                <h1 class="text-[18px] font-semibold my-auto text-orange-400">Cinema</h1>
+                <h1 class="text-[14px] mx-3  mt-[-8px] font-semibold my-auto text-orange-400">Company</h1>
+            </div>
+            
+        </div>
+        <div class="flex text-center focus:border-orange-500">
+            <input id="input" type="search" placeholder="Search the movies..." class="focus:outline-none focus:text-orange-500  border-orange-400 text-orange-200 border-1 w-[400px] px-8 py-3 border-r-0 rounded-l-full">
+            <button onclick="search()" class="hover:cursor-pointer mr-[-150px] border-orange-400 border-1 rounded-r-full w-fit px-5 py-3"><i class="text-orange-400  bi bi-search"></i></button>
+        </div>
+
+
+        <!-- Side Options -->
+
+        <div class="mr-[-200px] flex gap-4 hover:cursor-pointer text-lg text-neutral-500">
+            <a href="index.html"><h2 class="hover:text-orange-400">Home</h2></a>
+            <a href="movie.html"><h2 class="hover:text-orange-400">Search<h2></h2></a>
+            <div class="flex mx-2 gap-2">
+                <a href="login.html"><h2 class="hover:text-orange-400">Login</h2></a>
+                <h2>|</h2>
+                <a href="signup.html"><h2 class="hover:text-orange-400">Sign In</h2></a>
+            </div>
+        </div>
+
+        <img src="images/profile.jpg" class="rounded-full w-14 h-14">
+    </div>
+    
+    <div class="sub mt-[100px] w-fit p-5 rounded-2xl mx-auto text-center">
+        <img src="images/logo3.jpg" class=" h-[300px] w-[300px] mx-auto rounded-full">
+        <h1 class="text-3xl text-orange-200 mt-5 ">Click Search and Explore movies</h1>
+    </div>
+
+
+
+
+    <!-- Display Photo -->
+    <div class="main hidden" >
+        <div class="relative my-auto mt-8 flex justify-evenly">
+            <img id="poster" src="images/Avengers.jpg" class="h-[550px] w-[420px] object-fill rounded-2xl">
+            <!-- <h1 class="absolute top-5 left-5 text-orange-400 text-lg px-5 py-2  rounded-full bg-[#ffffff4e] "> Avengers: End Game </h1> -->
+             <div class=" ml-[-30px] " >
+                <div class="flex items-center mt-10">
+                    <h1 class="text-3xl font-medium text-orange-400">Title : </h1>
+                    <h2 id="title" class="text-2xl mx-3 mt-1 font-medium text-neutral-500 "> Movie Name</h2>
+                </div>
+                <div class="mt-2">
+                    <!-- Description -->
+                    <div class="w-[100vh]">
+                        <h1 class="text-xl font-medium text-orange-400 ">Description</h1>
+                        <p id="plot" class="text-lg text-neutral-700 mt-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, debitis? Praesentium optio eum similique, numquam iste porro quis voluptatum asperiores.</p>
+                        <div class="flex gap-5 mt-4">
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Director</h2>
+                                <p id="director" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Duration</h2>
+                                <p id="runtime" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Release Date</h2>
+                                <p id="released" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Genre</h2>
+                                <p id="genre" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Rating</h2>
+                                <p id="rating" class="text-lg mt-1">Time</p>
+                            </div>
+                        </div>
+    
+                        <div class="flex gap-5 mt-6">
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Language</h2>
+                                <p id="language" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Country</h2>
+                                <p id="country" class="text-lg mt-1">Time</p>
+                            </div>
+                            <div class="">
+                                <h2 class="text-xl text-orange-400 w-fit border-b-1">Writers</h2>
+                                <p id="writers" class="text-lg mt-1">Time</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Cast -->
+                    <div class=" mt-4 ">
+                        <h1 class="text-2xl font-medium text-orange-400">Cast</h1>
+                        <h1 id="actorName" class="text-xl text-neutral-700 mt-2 ml-2">Actors Name</h1>
+                        <!-- <div class="flex gap-5 mt-4 px-2">
+                            <!-- <div class="text-center border-1 rounded-xl" >
+                                <img src="Avengers.jpg" class="w-[150px] h-[150px] object-center rounded-t-xl">
+                                <h2 id="actorName" class="text-[18px] font-medium m-2 ">Name</h2>
+                            </div>
+                            <div class="text-center border-1 rounded-xl" >
+                                <img src="Avengers.jpg" class="w-[150px] h-[150px] object-center rounded-t-xl">
+                                <h2  class="text-[18px] font-medium m-2 ">Name</h2>
+                            </div>
+                            <div class="text-center border-1 rounded-xl" >
+                                <img src="Avengers.jpg" class="w-[150px] h-[150px] object-center rounded-t-xl">
+                                <h2  class="text-[18px] font-medium m-2 ">Name</h2>
+                            </div>
+                            <div class="text-center border-1 rounded-xl" >
+                                <img src="Avengers.jpg" class="w-[150px] h-[150px] object-center rounded-t-xl">
+                                <h2  class="text-[18px] font-medium m-2 ">Name</h2>
+                            </div> -->
+                        <!-- </div> -->
+                    </div>
+                    </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+</html>
