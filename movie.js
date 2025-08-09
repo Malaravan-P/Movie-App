@@ -1,4 +1,4 @@
-let apiBase = 'http://www.omdbapi.com/?apikey=bedbc1c0&t=';
+let apiBase = 'http://www.omdbapi.com/?apikey=bedbc1c0&s=';
 
 let title = document.querySelector('#title');
 let description = document.querySelector('#plot');
