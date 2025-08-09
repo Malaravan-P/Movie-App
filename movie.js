@@ -14,7 +14,7 @@ let country = document.querySelector('#country')
 let writers = document.querySelector('#writers')
 let hide = document.querySelector('.hide')
 let load = document.querySelector('.load');
-// load.classList.add('hidden')
+load.classList.add('hidden')
 hide.classList.remove('hidden')
 
 function searchhome(){
