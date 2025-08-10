@@ -31,24 +31,28 @@
             </div>
             
         </div>
-        <div class="flex text-center focus:border-orange-500">
-            <input id="inputhome" type="search" placeholder="Search the movies..." class="focus:outline-none focus:text-orange-500  border-orange-400 text-orange-200 border-1 w-[400px] px-8 py-3 border-r-0 rounded-l-full">
-            <button onclick="searchhome()" class=" hover:cursor-pointer mr-[-150px] border-orange-400 border-1 rounded-r-full w-fit px-5 py-3"><i class="text-orange-400  bi bi-search"></i></button>
-        </div>
-
-        <!-- Side Options -->
-
-        <div class="mr-[-200px] flex gap-4 hover:cursor-pointer text-lg text-neutral-500">
-            <a href="index.html"><h2 class="hover:text-orange-400 ">Home</h2></a>
-            <a href="movie.html"><h2 class="hover:text-orange-400">Search<h2></h2></a>
-            <div class="flex mx-2 gap-2">
-                <a href="login.html"><h2 class="hover:text-orange-400">Login</h2></a>
-                <h2>|</h2>
-                <a href="signup.html"><h2 class="hover:text-orange-400">Sign up</h2></a>
+        <div class="flex justify-around items-center gap-10">
+            <div class="flex text-center focus:border-orange-500">
+                <input id="inputhome" type="search" placeholder="Search the movies..." class="focus:outline-none focus:text-orange-500  border-orange-400 text-orange-200 border-1 w-[600px] px-8 py-3 border-r-0 rounded-l-full">
+                <button onclick="searchhome()" class=" hover:cursor-pointer  border-orange-400 border-1 rounded-r-full w-fit px-5 py-3"><i class="text-orange-400  bi bi-search"></i></button>
             </div>
         </div>
-        <div>
-            <a href="profile.html"><img src="images/profile.jpg" class="rounded-full w-14 h-14"></a>
+        <div class="flex items-center gap-5">
+            <!-- Side Options -->
+    
+            <div class=" flex gap-4 hover:cursor-pointer text-lg text-neutral-500">
+                <a href="index.html"><h2 class="hover:text-orange-400 ">Home</h2></a>
+                <a href="movie.html"><h2 class="hover:text-orange-400">Search<h2></h2></a>
+                <div class="flex mx-2 gap-2">
+                    <a href="login.html"><h2 class="hover:text-orange-400">Login</h2></a>
+                    <h2>|</h2>
+                    <a href="signup.html"><h2 class="hover:text-orange-400">Sign up</h2></a>
+                </div>
+            </div>
+
+            <div>
+                <a href="profile.html"><img src="images/profile.jpg" class="rounded-full w-14 h-14"></a>
+            </div>
         </div>
     </div>
 
@@ -128,21 +132,30 @@
     <div class="hide">
                 <!-- Display Photo -->
         <div class="my-auto mx-3 mt-4">
-            <img src="images/cinema.jpg" class="h-[400px] w-fit object-cover rounded-2xl">
+            <div>
+                <img src="images/cinema.jpg" class="h-[400px] w-full object-cover transition-all rounded-2xl">
+            </div>
         </div>
 
         <!-- Top-Rated Movies -->
         <div class="mt-10 mx-6">
             <div class="flex justify-between ">
                 <h1 class="text-2xl text-orange-400 font-semibold">Top-Rated Movies</h1>
-                <a href="movie.html">
-                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
-                        <h2>View All</h2>
-                        <i class=" bi bi-arrow-right-circle"></i>
+                    <div id="topviewall" class="">
+                        <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                            <h2>View All</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
                     </div>
-                </a>
+                    <div id="topviewless" class="">
+                        <div class=" text-sm bg-orange-400 border-orange-400 text-white hover:bg-white hover:border-orange-400 hover:text-orange-400 flex gap-2 border-1 py-2 px-4 rounded-full ">
+                            <h2>View less</h2>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                    </div>
             </div>
             <!-- movie images -->
+             <!-- Row 1 -->
             <div class="flex x-6 mt-5 justify-evenly">
                 <div id="gf" data-movie="The Godfather" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Godfather.jpg" class="w-[225px] h-[275px] object-center  rounded-3xl">
@@ -160,6 +173,83 @@
                     <img src="images/F**** C***.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>
+
+            <!-- Row 2 -->
+            <div id="toprated" class="">
+                <div class="flex x-6 mt-6 justify-evenly">
+                    <div id="gf" data-movie="The Godfather" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Godfather.jpg" class="w-[225px] h-[275px] object-center  rounded-3xl">
+                    </div>
+                    <div id="sr" data-movie="The shawshank redemption" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Shawshank Redemption 2.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sl" data-movie="Schindler's List" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/schindler's list.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="tdk" data-movie="The Dark Knight" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/The Dark Knight (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="fc" data-movie="Fight Club" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/F**** C***.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="flex x-6 mt-6 justify-evenly">
+                    <div id="gf" data-movie="The Godfather" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Godfather.jpg" class="w-[225px] h-[275px] object-center  rounded-3xl">
+                    </div>
+                    <div id="sr" data-movie="The shawshank redemption" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Shawshank Redemption 2.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sl" data-movie="Schindler's List" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/schindler's list.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="tdk" data-movie="The Dark Knight" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/The Dark Knight (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="fc" data-movie="Fight Club" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/F**** C***.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="flex x-6 mt-6 justify-evenly">
+                    <div id="gf" data-movie="The Godfather" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Godfather.jpg" class="w-[225px] h-[275px] object-center  rounded-3xl">
+                    </div>
+                    <div id="sr" data-movie="The shawshank redemption" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Shawshank Redemption 2.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sl" data-movie="Schindler's List" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/schindler's list.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="tdk" data-movie="The Dark Knight" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/The Dark Knight (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="fc" data-movie="Fight Club" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/F**** C***.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="flex x-6 mt-6 justify-evenly">
+                    <div id="gf" data-movie="The Godfather" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Godfather.jpg" class="w-[225px] h-[275px] object-center  rounded-3xl">
+                    </div>
+                    <div id="sr" data-movie="The shawshank redemption" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Shawshank Redemption 2.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sl" data-movie="Schindler's List" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/schindler's list.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="tdk" data-movie="The Dark Knight" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/The Dark Knight (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="fc" data-movie="Fight Club" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/F**** C***.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -167,12 +257,18 @@
         <div class="mt-10 mx-6">
             <div class="flex justify-between ">
                 <h1 class="text-2xl text-orange-400 font-semibold">Tamil Movies</h1>
-                <a href="movie.html">
-                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
-                        <h2>View All</h2>
-                        <i class=" bi bi-arrow-right-circle"></i>
+                    <div id="tamilviewall" class="">
+                        <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                            <h2>View All</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
                     </div>
-                </a>
+                    <div id="tamilviewless" class="">
+                        <div class=" text-sm bg-orange-400 border-orange-400 text-white hover:bg-white hover:border-orange-400 hover:text-orange-400  flex gap-2 border-1 py-2 px-4 rounded-full">
+                            <h2>View less</h2>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                    </div>
             </div>
             <!-- movie images -->
             <div class="flex x-6 mt-5 justify-evenly">
@@ -192,6 +288,85 @@
                     <img src="images/Thalapathi.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>
+
+            <!-- Row 2 -->
+            <div id="tamil" class="">
+
+                <div class="flex x-6 mt-5 justify-evenly">
+                    <div id="as" data-movie="Anbe Sivam" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Anbe Sivam.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nayakan" data-movie="Nayakan" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Nayakan.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nine" data-movie="'96" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/96.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sp" data-movie="Soorarai Pottru" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Soorarai Pottru.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="thalapathi" data-movie="Thalapathi" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Thalapathi.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="flex x-6 mt-5 justify-evenly">
+                    <div id="as" data-movie="Anbe Sivam" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Anbe Sivam.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nayakan" data-movie="Nayakan" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Nayakan.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nine" data-movie="'96" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/96.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sp" data-movie="Soorarai Pottru" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Soorarai Pottru.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="thalapathi" data-movie="Thalapathi" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Thalapathi.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="flex x-6 mt-5 justify-evenly">
+                    <div id="as" data-movie="Anbe Sivam" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Anbe Sivam.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nayakan" data-movie="Nayakan" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Nayakan.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nine" data-movie="'96" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/96.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sp" data-movie="Soorarai Pottru" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Soorarai Pottru.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="thalapathi" data-movie="Thalapathi" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Thalapathi.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="flex x-6 mt-5 justify-evenly">
+                    <div id="as" data-movie="Anbe Sivam" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Anbe Sivam.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nayakan" data-movie="Nayakan" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Nayakan.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="nine" data-movie="'96" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/96.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="sp" data-movie="Soorarai Pottru" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Soorarai Pottru.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="thalapathi" data-movie="Thalapathi" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Thalapathi.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -199,12 +374,18 @@
         <div class="mt-10 mx-6">
             <div class="flex justify-between ">
                 <h1 class="text-2xl text-orange-400 font-semibold">Marvel Movies</h1>
-                <a href="movie.html">
-                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
-                        <h2>View All</h2>
-                        <i class=" bi bi-arrow-right-circle"></i>
+                    <div id="marvelviewall" class="">
+                        <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                            <h2>View All</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
                     </div>
-                </a>
+                    <div id="marvelviewless" class="">
+                        <div class=" text-sm bg-orange-400 border-orange-400 text-white hover:bg-white hover:border-orange-400 hover:text-orange-400 flex gap-2 border-1 py-2 px-4 rounded-full">
+                            <h2>View less</h2>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                    </div>
             </div>
             <!-- movie images -->
             <div class="flex x-6 mt-5 justify-evenly">
@@ -224,6 +405,84 @@
                     <img src="images/Spiderman NWH.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>
+
+            <!-- Row 2 -->
+            <div id="marvel" class="">
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="aiw" data-movie="Avengers Infinity War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Avengers Infinity War .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="cacw" data-movie="Captain America Civil War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Captain America_ Civil War.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="guardians" data-movie="Guardians of the galaxy" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Guardians.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="ironman" data-movie="Iron Man" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Iron Man (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="snwh" data-movie="spider man no way home" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Spiderman NWH.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="aiw" data-movie="Avengers Infinity War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Avengers Infinity War .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="cacw" data-movie="Captain America Civil War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Captain America_ Civil War.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="guardians" data-movie="Guardians of the galaxy" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Guardians.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="ironman" data-movie="Iron Man" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Iron Man (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="snwh" data-movie="spider man no way home" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Spiderman NWH.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="aiw" data-movie="Avengers Infinity War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Avengers Infinity War .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="cacw" data-movie="Captain America Civil War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Captain America_ Civil War.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="guardians" data-movie="Guardians of the galaxy" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Guardians.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="ironman" data-movie="Iron Man" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Iron Man (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="snwh" data-movie="spider man no way home" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Spiderman NWH.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="aiw" data-movie="Avengers Infinity War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Avengers Infinity War .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="cacw" data-movie="Captain America Civil War" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Captain America_ Civil War.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="guardians" data-movie="Guardians of the galaxy" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Guardians.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="ironman" data-movie="Iron Man" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Iron Man (2008) .jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="snwh" data-movie="spider man no way home" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Spiderman NWH.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -232,14 +491,21 @@
         <div class="mt-10 mx-6">
             <div class="flex justify-between ">
                 <h1 class="text-2xl text-orange-400 font-semibold">Disney Movies</h1>
-                <a href="movie.html">
-                    <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
-                        <h2>View All</h2>
-                        <i class=" bi bi-arrow-right-circle"></i>
+                    <div id="disneyviewall" class="">
+                        <div class="text-sm hover:bg-orange-400 hover:border-orange-400 text-neutral-400 hover:text-white  flex gap-2 border-1 py-2 px-4 rounded-full border-neutral-400">
+                            <h2>View All</h2>
+                            <i class="bi bi-caret-right-fill"></i>
+                        </div>
                     </div>
-                </a>
+                    <div id="disneyviewless" class="">
+                        <div class=" text-sm bg-orange-400 border-orange-400 text-white hover:bg-white hover:border-orange-400 hover:text-orange-400  flex gap-2 border-1 py-2 px-4 rounded-full ">
+                            <h2>View less</h2>
+                            <i class="bi bi-caret-down-fill"></i>
+                        </div>
+                    </div>
             </div>
             <!-- movie images -->
+             <!-- Row 1 -->
             <div class="flex x-6 mt-5 justify-evenly">
                 <div id="bighero" data-movie="Big Hero 6" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
                     <img src="images/Big Hero 6.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
@@ -257,6 +523,85 @@
                     <img src="images/UP .jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
                 </div>
             </div>
+
+            <!-- Row 2 -->
+             <div id="disney" class="">
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="bighero" data-movie="Big Hero 6" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Big Hero 6.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="toystory" data-movie="Toy Story" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Toy story.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="monster" data-movie="Monsters, Inc." class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Monster inc.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="lionking" data-movie="The Lion King" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/Lion King.jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="up" data-movie="Up" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/UP .jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="bighero" data-movie="Big Hero 6" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Big Hero 6.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="toystory" data-movie="Toy Story" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Toy story.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="monster" data-movie="Monsters, Inc." class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Monster inc.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="lionking" data-movie="The Lion King" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/Lion King.jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="up" data-movie="Up" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/UP .jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="bighero" data-movie="Big Hero 6" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Big Hero 6.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="toystory" data-movie="Toy Story" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Toy story.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="monster" data-movie="Monsters, Inc." class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Monster inc.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="lionking" data-movie="The Lion King" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/Lion King.jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="up" data-movie="Up" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/UP .jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+
+                <div class="flex x-6 mt-8 justify-evenly">
+                    <div id="bighero" data-movie="Big Hero 6" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Big Hero 6.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="toystory" data-movie="Toy Story" class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Toy story.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="monster" data-movie="Monsters, Inc." class=" w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer ">
+                        <img src="images/Monster inc.jpg" class="w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="lionking" data-movie="The Lion King" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/Lion King.jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                    <div id="up" data-movie="Up" class="w-[225px] h-[275px] rounded-3xl hover:shadow-xl hover:cursor-pointer  ">
+                        <img src="images/UP .jpg" class=" w-[225px] h-[275px] object-center rounded-3xl">
+                    </div>
+                </div> 
+             </div>
         </div>
 
 

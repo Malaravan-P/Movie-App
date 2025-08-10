@@ -26,9 +26,11 @@ function searchhome(){
 const loadingEl = document.getElementById('loading');
 
 function showLoading() {
+    load.classList.add('hidden')
   loadingEl.classList.remove('hidden');
 }
 function hideLoading() {
+    load.classList.remove('hidden')
   loadingEl.classList.add('hidden');
 }
 async function fetchMovie(query) {
@@ -72,3 +74,80 @@ function back(){
     load.classList.add('hidden')
 }
 
+
+
+let topviewall = document.querySelector('#topviewall');
+let topviewless = document.querySelector('#topviewless');
+let toprated = document.querySelector('#toprated');
+toprated.classList.add('hidden');
+topviewless.classList.add('hidden');
+
+topviewall.addEventListener('click',()=>{
+
+    topviewall.classList.add('hidden','transition-all');
+    topviewless.classList.remove('hidden','transition-all');
+    toprated.classList.remove('hidden','transition-all');
+})
+
+topviewless.addEventListener('click',()=>{
+    topviewless.classList.add('hidden','transition-all');
+    topviewall.classList.remove('hidden','transition-all');
+    toprated.classList.add('hidden','transition-all');
+})
+
+let tamilviewall = document.querySelector('#tamilviewall');
+let tamilviewless = document.querySelector('#tamilviewless');
+let tamil = document.querySelector('#tamil');
+tamil.classList.add('hidden');
+tamilviewless.classList.add('hidden');
+
+tamilviewall.addEventListener('click',()=>{
+
+    tamilviewall.classList.add('hidden','transition-all');
+    tamilviewless.classList.remove('hidden','transition-all');
+    tamil.classList.remove('hidden','transition-all');
+})
+
+tamilviewless.addEventListener('click',()=>{
+    tamilviewless.classList.add('hidden','transition-all');
+    tamilviewall.classList.remove('hidden','transition-all');
+    tamil.classList.add('hidden','transition-all');
+})
+
+let marvelviewall = document.querySelector('#marvelviewall');
+let marvelviewless = document.querySelector('#marvelviewless');
+let marvel = document.querySelector('#marvel');
+marvel.classList.add('hidden');
+marvelviewless.classList.add('hidden');
+
+marvelviewall.addEventListener('click',()=>{
+
+    marvelviewall.classList.add('hidden','transition-all');
+    marvelviewless.classList.remove('hidden','transition-all');
+    marvel.classList.remove('hidden','transition-all');
+})
+
+marvelviewless.addEventListener('click',()=>{
+    marvelviewless.classList.add('hidden','transition-all');
+    marvelviewall.classList.remove('hidden','transition-all');
+    marvel.classList.add('hidden','transition-all');
+})
+
+let disneyviewall = document.querySelector('#disneyviewall');
+let disneyviewless = document.querySelector('#disneyviewless');
+let disney = document.querySelector('#disney');
+disney.classList.add('hidden');
+disneyviewless.classList.add('hidden');
+
+disneyviewall.addEventListener('click',()=>{
+
+    disneyviewall.classList.add('hidden');
+    disneyviewless.classList.remove('hidden');
+    disney.classList.remove('hidden');
+})
+
+disneyviewless.addEventListener('click',()=>{
+    disneyviewless.classList.add('hidden');
+    disneyviewall.classList.remove('hidden');
+    disney.classList.add('hidden');
+})
